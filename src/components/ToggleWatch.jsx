@@ -11,7 +11,7 @@ class ToggleWatch extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
+    handleClick() {
         this.setState({
             toggleWatch: !this.state.toggleWatch
         });

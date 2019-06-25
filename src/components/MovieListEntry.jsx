@@ -1,10 +1,11 @@
 import React from 'react';
+import ToggleWatch from './ToggleWatch'
 
 const MovieListEntry = (props) => (
     <div>
         <div>
             {props.movie.title}
-            <button type="button">Watched</button>
+            <ToggleWatch />
         </div> 
     </div>
 );
