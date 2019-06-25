@@ -13,13 +13,21 @@ class App extends React.Component {
             userText: '',
             userMovies: [],
             filteredMovies: [],
-            filter: false
+            filter: false,
+            toggleWatch: true
         };
         
         this.handleMovieAdding = this.handleMovieAdding.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState({
+            toggleWatch: !this.state.toggleWatch
+        })
     }
 
     handleMovieAdding(event) {
@@ -71,7 +79,10 @@ class App extends React.Component {
                 <h1>Movie List</h1>
                 <AddMovies handleMovieAdding={this.handleMovieAdding} handleAdd={this.handleAdd} />
                 <Search handleSearch={this.handleSearch} handleSubmit={this.handleSubmit} /> 
-                <MovieList movies={ (this.state.filter ? this.state.filteredMovies : this.state.userMovies) } filter={this.state.filter} />
+                <MovieList movies={ (this.state.filter ? this.state.filteredMovies : this.state.userMovies) } 
+                    filter={this.state.filter} 
+                    handleClick={this.handleClick} 
+                    toggleWatch={this.state.toggleWatch}/>
             </div>
         );
     }

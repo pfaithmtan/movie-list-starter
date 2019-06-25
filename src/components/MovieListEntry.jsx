@@ -5,7 +5,7 @@ const MovieListEntry = (props) => (
     <div>
         <div>
             {props.movie.title}
-            <ToggleWatch />
+            <ToggleWatch handleClick={props.handleClick} toggleWatch={props.toggleWatch}/>
         </div> 
     </div>
 );
