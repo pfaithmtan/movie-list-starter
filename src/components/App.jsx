@@ -38,7 +38,11 @@ class App extends React.Component {
             } 
         }
         
-        newMovies.push({title: this.state.newMovie});
+        newMovies.push({
+            title: this.state.newMovie, 
+            watched: true 
+        });
+
         this.setState({
             userMovies: newMovies,
             filter: false
@@ -65,9 +69,9 @@ class App extends React.Component {
         return(
             <div>
                 <h1>Movie List</h1>
-                <AddMovies handleMovieAdding={this.handleMovieAdding} handleAdd={this.handleAdd}/>
+                <AddMovies handleMovieAdding={this.handleMovieAdding} handleAdd={this.handleAdd} />
                 <Search handleSearch={this.handleSearch} handleSubmit={this.handleSubmit} /> 
-                <MovieList movies={ (this.state.filter ? this.state.filteredMovies : this.state.userMovies) } />
+                <MovieList movies={ (this.state.filter ? this.state.filteredMovies : this.state.userMovies) } filter={this.state.filter} />
             </div>
         );
     }
