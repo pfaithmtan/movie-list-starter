@@ -38,6 +38,7 @@ class App extends React.Component {
 
     handleAdd(event) {
         event.preventDefault();
+        event.target.reset();
         const newMovies = [...this.state.userMovies];
 
         for (let i = 0; i < newMovies.length; i++) {
@@ -65,6 +66,7 @@ class App extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        event.target.reset();
         const userMoviesCopy = [...this.state.userMovies];
         const filteredMovies = userMoviesCopy.filter(movie => movie.title.toLowerCase().includes(this.state.userText.toLowerCase()));
         this.setState({
