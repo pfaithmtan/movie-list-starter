@@ -2,7 +2,10 @@ import React from 'react';
 
 const MovieListEntry = (props) => (
     <div>
-        {props.movie.title}
+        <div>
+            {props.movie.title}
+            <button type="button">Watched</button>
+        </div> 
     </div>
 );
 
