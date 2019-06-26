@@ -24,7 +24,8 @@ class App extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    handleClick(movieTitle) {
+        console.log(movieTitle, 'currentStateOfMovie', 'newStateOfMovie')
         this.setState({
             toggleWatch: !this.state.toggleWatch
         })
@@ -49,7 +50,7 @@ class App extends React.Component {
         
         newMovies.push({
             title: this.state.newMovie, 
-            watched: true 
+            watched: this.state.toggleWatch
         });
 
         this.setState({

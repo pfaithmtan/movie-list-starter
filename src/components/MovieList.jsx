@@ -6,7 +6,7 @@ const MovieList = (props) => (
         { (props.movies.length === 0 && props.filter) ? <div>No Movies Found</div> : props.movies.map(movie => <MovieListEntry 
         movie={movie} 
         handleClick={props.handleClick}
-        toggleWatch={props.toggleWatch}/>) }
+        toggleWatch={movie.watched}/>) }
     </div>
 );
 
