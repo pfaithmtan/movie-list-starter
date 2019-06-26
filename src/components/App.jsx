@@ -67,7 +67,7 @@ class App extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        event.target.reset();
+        // event.target.reset();
         const userMoviesCopy = [...this.state.userMovies];
         const filteredMovies = userMoviesCopy.filter(movie => movie.title.toLowerCase().includes(this.state.userText.toLowerCase()));
         this.setState({
@@ -81,6 +81,10 @@ class App extends React.Component {
             <div>
                 <h1>Movie List</h1>
                 <AddMovies handleMovieAdding={this.handleMovieAdding} handleAdd={this.handleAdd} />
+                <div>
+                    <button type="button" onClick={this.handleClick}>Watched</button>
+                    <button type="button">Not Watched</button>
+                </div>
                 <Search handleSearch={this.handleSearch} handleSubmit={this.handleSubmit} /> 
                 <MovieList movies={ (this.state.filter ? this.state.filteredMovies : this.state.userMovies) } 
                     filter={this.state.filter} 
