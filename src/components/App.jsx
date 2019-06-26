@@ -26,6 +26,7 @@ class App extends React.Component {
 
     handleClick(movieTitle) {
         console.log(movieTitle, 'currentStateOfMovie', 'newStateOfMovie')
+        console.log(!this.state.toggleWatch)
         this.setState({
             toggleWatch: !this.state.toggleWatch
         })
