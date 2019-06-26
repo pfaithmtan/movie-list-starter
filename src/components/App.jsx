@@ -22,6 +22,16 @@ class App extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleWatched = this.handleWatched.bind(this);
+    }
+
+    handleWatched(movie) {
+        const userMoviesCopy = [...this.state.userMovies];
+        const watchedMovies = userMoviesCopy.filter(movie => movie.watched);
+        this.setState({
+            filteredMovies: watchedMovies,
+            filter: true
+        });
     }
 
     handleClick(movie) {
@@ -82,7 +92,7 @@ class App extends React.Component {
                 <h1>Movie List</h1>
                 <AddMovies handleMovieAdding={this.handleMovieAdding} handleAdd={this.handleAdd} />
                 <div>
-                    <button type="button" onClick={this.handleClick}>Watched</button>
+                    <button type="button" onClick={() => this.handleWatched()}>Watched</button>
                     <button type="button">Not Watched</button>
                 </div>
                 <Search handleSearch={this.handleSearch} handleSubmit={this.handleSubmit} /> 
