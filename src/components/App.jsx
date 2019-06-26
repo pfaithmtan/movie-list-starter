@@ -53,7 +53,7 @@ class App extends React.Component {
         
         newMovies.push({
             title: this.state.newMovie, 
-            watched: this.state.watched
+            watched: false
         });
 
         this.setState({
