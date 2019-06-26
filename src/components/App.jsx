@@ -25,10 +25,7 @@ class App extends React.Component {
     }
 
     handleClick(movie) {
-        console.log(movie, 'currentStateOfMovie', 'newStateOfMovie')
-        console.log('before:', movie.watched)
         movie.watched = !movie.watched
-        console.log('after', movie.watched)
         this.setState({
             watched: !this.state.watched
         })
